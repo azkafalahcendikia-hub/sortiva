@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Sortiva is an interactive sorting algorithm visualizer designed to help students learn Data Structures and Algorithms." />
+  <title>Sortiva — Learn Sorting Through Visualization</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">
+        <img src="assets/Sortiva_Logo_4.png" alt="Sortiva logo">
+      </div>
+      <div>
+        <h1>Sortiva</h1>
+        <p>Learn Sorting Through Visualization</p>
+      </div>
+    </div>
+    <span class="status-pill">Interactive Learning Tool</span>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <p class="eyebrow">LEARN • VISUALIZE • UNDERSTAND</p>
+      <h2>See how sorting algorithms work, one step at a time.</h2>
+      <p class="hero-text">
+        Explore common sorting algorithms through an interactive visualization.
+        Compare elements, observe comparisons and swaps, and connect the animation to the idea behind the code.
+      </p>
+    </section>
+
+    <section class="workspace">
+      <aside class="panel controls-panel">
+        <div class="panel-heading">
+          <div><span class="section-label">01</span>
+            <h3>Setup</h3>
+          </div>
+        </div>
+
+        <label for="algorithm">Sorting Algorithm</label>
+        <select id="algorithm">
+          <option value="bubble">Bubble Sort</option>
+          <option value="selection">Selection Sort</option>
+          <option value="insertion">Insertion Sort</option>
+          <option value="quick">Quick Sort</option>
+        </select>
+
+        <label for="dataInput">Input Data</label>
+        <input id="dataInput" type="text" value="8, 3, 5, 1, 7, 2" aria-describedby="dataHint" />
+        <p id="dataHint" class="hint">Use comma-separated numbers. 2–16 values are supported.</p>
+        <p id="inputError" class="error" role="alert"></p>
+
+        <div class="button-row">
+          <button id="generateBtn" class="secondary-btn" type="button">Generate Random</button>
+          <button id="visualizeBtn" class="primary-btn" type="button">Visualize</button>
+        </div>
+
+        <div class="divider"></div>
+
+        <label for="speedRange">Animation Speed</label>
+        <div class="speed-line">
+          <span>Slow</span>
+          <input id="speedRange" type="range" min="100" max="1000" value="500" step="50" aria-label="Animation speed" />
+          <span>Fast</span>
+        </div>
+
+        <div class="button-grid">
+          <button id="prevBtn" type="button">◀ Previous</button>
+          <button id="playBtn" class="play-btn" type="button">▶ Play</button>
+          <button id="nextBtn" type="button">Next ▶</button>
+          <button id="resetBtn" type="button">↻ Reset</button>
+        </div>
+      </aside>
+
+      <section class="panel visual-panel">
+        <div class="panel-heading visual-heading">
+          <div><span class="section-label">02</span>
+            <h3>Visualization</h3>
+          </div>
+          <div class="step-indicator">Step <strong id="stepNumber">0</strong> / <strong id="stepTotal">0</strong></div>
+        </div>
+
+        <div class="progress-track" aria-label="Sorting progress">
+          <div id="progressBar" class="progress-bar"></div>
+        </div>
+        <div id="visualizer" class="visualizer" aria-label="Sorting visualization"></div>
+
+        <div class="legend">
+          <span><i class="legend-dot normal"></i>Normal</span>
+          <span><i class="legend-dot active"></i>Comparing / Moving</span>
+          <span><i class="legend-dot sorted"></i>Sorted</span>
+          <span><i class="legend-dot pivot"></i>Pivot</span>
+        </div>
+
+        <div class="stats-grid" aria-live="polite">
+          <div class="stat"><span>Comparisons</span><strong id="comparisonCount">0</strong></div>
+          <div class="stat"><span>Moves / Swaps</span><strong id="moveCount">0</strong></div>
+          <div class="stat"><span>Current algorithm</span><strong id="statAlgorithm">Bubble Sort</strong></div>
+        </div>
+
+        <div id="currentStep" class="step-card">
+          <span class="step-tag">CURRENT STEP</span>
+          <p id="stepMessage">Press Visualize or Play to start.</p>
+        </div>
+      </section>
+    </section>
+
+    <section class="info-grid">
+      <article class="panel">
+        <div class="panel-heading">
+          <div><span class="section-label">03</span>
+            <h3>About the Algorithm</h3>
+          </div>
+        </div>
+        <h4 id="algorithmTitle">Bubble Sort</h4>
+        <p id="algorithmDescription"></p>
+        <div class="tag-row"><span id="stabilityTag" class="info-tag"></span><span id="memoryTag"
+            class="info-tag"></span></div>
+
+        <div class="complexity-grid">
+          <div><span>Best</span><strong id="bestComplexity"></strong></div>
+          <div><span>Average</span><strong id="averageComplexity"></strong></div>
+          <div><span>Worst</span><strong id="worstComplexity"></strong></div>
+          <div><span>Space</span><strong id="spaceComplexity"></strong></div>
+        </div>
+      </article>
+
+      <article class="panel learning-panel">
+        <div class="panel-heading">
+          <div><span class="section-label">04</span>
+            <h3>What is happening?</h3>
+          </div>
+        </div>
+        <p id="learningText">The explanation will update as the visualization moves through each algorithm step.</p>
+        <div class="tip-box">
+          <strong>Learning tip</strong>
+          <p>Try the same input with different algorithms and compare the number of comparisons, moves, and steps.</p>
+        </div>
+      </article>
+    </section>
+
+    <footer>
+      <span>Sortiva • Interactive Learning Experience</span>
+      <span>Learn • Visualize • Understand</span>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
