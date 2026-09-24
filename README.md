@@ -1,4 +1,4 @@
-# Sortiva — Learn Sorting Through Visualization
+# Sortiva - Learn Sorting Through Visualization
 
 Sortiva is an educational web project that visualizes common sorting algorithms step by step. It was designed to make Data Structures & Algorithms concepts easier to understand by turning abstract comparisons, movements, swaps, and pivots into visible interactions.
 
@@ -16,5 +16,5 @@ Sortiva is an educational web project that visualizes common sorting algorithms 
 ## Tech
 HTML, CSS, and vanilla JavaScript. No framework or backend is required.
 
-## Portfolio angle
-The strongest story is not only "I built a sorting visualizer," but "I identified a learning difficulty in an algorithms course and built an interactive tool to make the process easier to see, compare, and discuss."
+## Live Demo
+https://sortiva.netlify.app/
